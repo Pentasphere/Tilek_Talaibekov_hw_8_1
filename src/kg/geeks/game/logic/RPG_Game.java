@@ -18,7 +18,7 @@ public class RPG_Game {
         Magic magic = new Magic(280, 20, "Potter");
         Berserk berserk = new Berserk(260, 15, "Axe");
         Thor thor = new Thor(190,20,"Thunder");
-        Witcher witcher = new Witcher(600,20,"Doctor");
+        Witcher witcher = new Witcher(600,0,"Doctor");
 
         Hero[] heroes = {warrior1, warrior2, doc, assistant, magic, berserk, thor, witcher};
 

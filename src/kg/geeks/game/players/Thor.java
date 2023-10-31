@@ -2,6 +2,8 @@ package kg.geeks.game.players;
 
 import kg.geeks.game.logic.RPG_Game;
 
+import java.util.Random;
+
 public class Thor extends Hero{
     private int bossDefaultDamage;
     public Thor(int health, int damage, String name) {
@@ -17,7 +19,7 @@ public class Thor extends Hero{
     }
     @Override
     public void applySuperPower(Boss boss, Hero[] heroes) {
-        setBossDefaultDamage(50);
+        /*setBossDefaultDamage(50);
         if (boss.getDamage() == 0){
             boss.setDamage(this.getBossDefaultDamage());
         }
@@ -33,6 +35,18 @@ public class Thor extends Hero{
                     boss.getDamage();
                     break;
                 }
+            }
+        }*/
+        Random thor = new Random();
+        boolean stun = thor.nextBoolean();
+        for (int i = 0; i < heroes.length; i++) {
+            if (stun){
+                boss.setDamage(0);
+                System.out.println("Thor stunned BOSS!");
+                break;
+            } else{
+                boss.setDamage(50);
+                break;
             }
         }
     }

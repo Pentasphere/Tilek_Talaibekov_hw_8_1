@@ -3,13 +3,21 @@ package kg.geeks.game.players;
 public class Witcher extends Hero{
     @Override
     public void applySuperPower(Boss boss, Hero[] heroes) {
-        for (int i = 0; i < heroes.length; i++) {
+      /* for (int i = 0; i < heroes.length; i++) {
             if (heroes[i].equals("Doctor")){
                 continue;
             } else if (heroes[i].getHealth()==0 && heroes[7].getHealth()>0) {
                 heroes[i].setHealth(heroes[i].getHealth() + heroes[7].getHealth());
                 heroes[7].setHealth(0);
                 System.out.println("Witcher отдал жизнь " + heroes[i].getName());
+                break;
+            }
+        }*/
+        for (Hero hero: heroes){
+            if (hero.getHealth()<=0){
+                hero.setHealth((this.getHealth()));
+                this.setHealth(0);
+                System.out.println("Witcher " + this.getName() + " sacrificed himself for " + hero.getName());
                 break;
             }
         }
