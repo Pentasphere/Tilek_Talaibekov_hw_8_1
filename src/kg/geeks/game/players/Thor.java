@@ -37,16 +37,17 @@ public class Thor extends Hero{
                 }
             }
         }*/
-        Random thor = new Random();
-        boolean stun = thor.nextBoolean();
+        boolean stun = RPG_Game.random.nextBoolean();
         for (int i = 0; i < heroes.length; i++) {
-            if (stun){
-                boss.setDamage(0);
-                System.out.println("Thor stunned BOSS!");
-                break;
-            } else{
-                boss.setDamage(50);
-                break;
+            if (this.getHealth() > 0) {
+                if (stun) {
+                    boss.setDamage(0);
+                    System.out.println("Thor stunned BOSS!");
+                    break;
+                } else {
+                    boss.setDamage(50);
+                    break;
+                }
             }
         }
     }
